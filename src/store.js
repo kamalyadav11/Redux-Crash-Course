@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 // @redux-thunk is used to handle asynchronous actiosn in redux
-// import thunk from 'redux-thunk'; 
+import thunk from 'redux-thunk'; 
 import rootreducer from './reducers';
 
 const initialState = {};
