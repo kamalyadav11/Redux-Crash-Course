@@ -5,7 +5,7 @@ import rootreducer from './reducers';
 
 const initialState = {};
 
-const middleware = [];
+const middleware = [thunk];
 
  //@appluMiddleWare is used for using thunk 
 const store = createStore(
