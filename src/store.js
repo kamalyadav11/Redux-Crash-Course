@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 // @redux-thunk is used to handle asynchronous actiosn in redux
 import thunk from 'redux-thunk'; 
 import rootreducer from './reducers';
@@ -11,7 +11,10 @@ const middleware = [thunk];
 const store = createStore(
   rootreducer, 
   initialState, 
-  applyMiddleware(...middleware)
+  compose(
+    applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX
+  )
 );
 
 export default store;
